@@ -1,5 +1,7 @@
 # Kunitaka Civic Tech
 
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
+
 ## Kidssafe MAP in Kunitaka
 
 https://code4fukui.github.io/kunitaka/kidssafe.html

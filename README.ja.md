@@ -1,13 +1,15 @@
 # 越前市 国高地区 シビックテック
 
-## 国高地区 地域安全 キッズセーフマップ / Kidssafe MAP in Kunitaka
+国高地区における地域安全マップ「キッズセーフ」の取り組みを紹介するリポジトリです。
+
+## 国高地区 地域安全 キッズセーフマップ
 
 https://code4fukui.github.io/kunitaka/kidssafe.html
 
 ## 危険箇所編集方法
 
 下記アプリ「緯度経度地図」から該当場所に動かして、Geo3x3をコピーする
-- https://fukuno.jig.jp/app/map/latlng/#%E8%B6%8A%E5%89%8D%E5%B8%82
+- https://fukuno.jig.jp/app/map/latlng/#Akechi
 
 ## オープンデータ CC BY
 
@@ -36,3 +38,7 @@ python3 -m pip install jupyter
 jupyter notebook
 ```
 open "data_analyse.ipynb"
+
+## ライセンス
+
+MIT License
