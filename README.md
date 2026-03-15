@@ -1,41 +1,44 @@
-# 越前市 国高地区 シビックテック
+# Kunitaka Civic Tech
 
-## 国高地区 地域安全 キッズセーフマップ / Kidssafe MAP in Kunitaka
+## Kidssafe MAP in Kunitaka
 
-https://code4fukui.github.io/kunitaka/kidssafe.html  
+https://code4fukui.github.io/kunitaka/kidssafe.html
 
-## 危険箇所編集方法
+## Editing Dangerous Locations
 
-下記アプリ「緯度経度地図」から該当場所に動かして、Geo3x3をコピーする
-- https://fukuno.jig.jp/app/map/latlng/#%E8%B6%8A%E5%89%8D%E5%B8%82
+Copy the Geo3x3 code from the "Latitude Longitude Map" app below for the corresponding location.
+- https://fukuno.jig.jp/app/map/latlng/#Akechi
 
 <img width="511" alt="image" src="https://user-images.githubusercontent.com/1715217/219602296-2d3b72ce-581a-4ba8-8c69-edbe1b95ee76.png">
 
+## Open Data CC BY
 
-## オープンデータ CC BY
+- [School Zone GeoJSON](https://code4fukui.github.io/kunitaka/schoolzone.geojson)
 
-- [通学路GeoJSON](https://code4fukui.github.io/kunitaka/schoolzone.geojson)
+## Development
 
-## 開発の仕方
+### Clone the repository
 
-### cloneする
-
-1. [GitHub Desktop](https://desktop.github.com/)をインストール
-2. 緑色のボタン「Code」を押し「Open with GitHub Desktop」を選ぶ
-3. [Deno](https://deno.land/)をインストール
-4. kunitakaのディレクトリ内で下記を実行する
+1. Install [GitHub Desktop](https://desktop.github.com/)
+2. Click the green "Code" button and select "Open with GitHub Desktop"
+3. Install [Deno](https://deno.land/)
+4. Run the following in the kunitaka directory:
 ```sh
 deno run --allow-net --allow-read https://taisukef.github.io/liveserver/liveserver.js
 ```
-5. 表示されたリンクをブラウザ開く （例、 [http://[::]:7001/](http://[::]:7001/))
-6. [kidssafe.html](kidssafe.html) などを、編集する （自動的に変更がブラウザに反映される）
-7. GitHub Desktopで、ブランチを作り、プルリクする
+5. Open the displayed link in a browser (e.g. [http://[::]:7001/](http://[::]:7001/))
+6. Edit files such as `kidssafe.html` (changes will be automatically reflected in the browser)
+7. Create a branch in GitHub Desktop and submit a pull request
 
-## 交通事故オープンデータのデータ加工 by Jupyter Notebook
+## Traffic Accident Open Data Processing with Jupyter Notebook
 
 ```
 python3 -m pip install pandas
 python3 -m pip install jupyter
 jupyter notebook
 ```
-open "data_analyse.ipynb"
+Open "data_analyse.ipynb"
+
+## License
+
+MIT License
