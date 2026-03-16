@@ -11,7 +11,7 @@ https://code4fukui.github.io/kunitaka/kidssafe.html
 Copy the Geo3x3 code from the "Latitude Longitude Map" app below for the corresponding location.
 - https://fukuno.jig.jp/app/map/latlng/#Akechi
 
-<img width="511" alt="image" src="https://user-images.githubusercontent.com/1715217/219602296-2d3b72ce-581a-4ba8-8c69-edbe1b95ee76.png">
+![image](https://user-images.githubusercontent.com/1715217/219602296-2d3b72ce-581a-4ba8-8c69-edbe1b95ee76.png)
 
 ## Open Data CC BY
 
