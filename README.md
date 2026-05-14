@@ -1,41 +1,79 @@
-# 越前市 国高地区 シビックテック
+# Kunitaka Civic Tech: Kids Safe Map
 
-## 国高地区 地域安全 キッズセーフマップ / Kidssafe MAP in Kunitaka
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
 
-https://code4fukui.github.io/kunitaka/kidssafe.html  
+A community safety map for the Kunitaka district of Echizen City, Fukui, Japan. This project visualizes dangerous locations, school zones, and other local data to improve child safety.
 
-## 危険箇所編集方法
+## Live Demo
 
-下記アプリ「緯度経度地図」から該当場所に動かして、Geo3x3をコピーする
-- https://fukuno.jig.jp/app/map/latlng/#%E8%B6%8A%E5%89%8D%E5%B8%82
+View the interactive map: **[https://code4fukui.github.io/kunitaka/](https://code4fukui.github.io/kunitaka/)**
 
-<img width="511" alt="image" src="https://user-images.githubusercontent.com/1715217/219602296-2d3b72ce-581a-4ba8-8c69-edbe1b95ee76.png">
+The map displays various safety-related data points on a map of the Kunitaka area, with a distinctive red header and a side menu for layer selection.
+
+## Features
+
+-   **Interactive Safety Map:** Visualizes school zones, reported dangerous locations, streetlights, and traffic accident data.
+-   **Easy Data Contribution:** Uses [Geo3x3](https://geo3x3.com/) codes to allow community members to easily pinpoint and report hazardous locations.
+-   **Open Data:** Provides school zone route data as a GeoJSON file under a CC BY license.
+-   **Data Processing Tools:** Includes a Jupyter Notebook for analyzing traffic accident data and a Deno script for converting Japanese geodetic coordinates (Tokyo Datum) to WGS84.
+
+## How to Add a Dangerous Location
+
+Community contributions are welcome. To add a new dangerous or concerning location to the map:
+
+1.  Open the **[Latitude Longitude Map](https://fukuno.jig.jp/app/map/latlng/#Akechi)** app and navigate to the correct location.
+2.  Copy the `Geo3x3` code provided by the app.
+
+    
+![image](https://user-images.githubusercontent.com/1715217/219602296-2d3b72ce-581a-4ba8-8c69-edbe1b95ee76.png)
 
 
-## オープンデータ CC BY
+3.  Add a new line to the appropriate CSV file in the `kidssafe/` directory with the Geo3x3 code, a description of the hazard, and a suggested improvement.
+4.  Submit a pull request with your changes.
 
-- [通学路GeoJSON](https://code4fukui.github.io/kunitaka/schoolzone.geojson)
+## Development
 
-## 開発の仕方
+### Prerequisites
 
-### cloneする
+-   [GitHub Desktop](https://desktop.github.com/)
+-   [Deno](https://deno.land/)
 
-1. [GitHub Desktop](https://desktop.github.com/)をインストール
-2. 緑色のボタン「Code」を押し「Open with GitHub Desktop」を選ぶ
-3. [Deno](https://deno.land/)をインストール
-4. kunitakaのディレクトリ内で下記を実行する
-```sh
-deno run --allow-net --allow-read https://taisukef.github.io/liveserver/liveserver.js
-```
-5. 表示されたリンクをブラウザ開く （例、 [http://[::]:7001/](http://[::]:7001/))
-6. [kidssafe.html](kidssafe.html) などを、編集する （自動的に変更がブラウザに反映される）
-7. GitHub Desktopで、ブランチを作り、プルリクする
+### Running Locally
 
-## 交通事故オープンデータのデータ加工 by Jupyter Notebook
+1.  Clone the repository using GitHub Desktop by clicking the green "Code" button and selecting "Open with GitHub Desktop".
+2.  In your terminal, navigate to the cloned `kunitaka` directory.
+3.  Start the Deno live server:
+    ```sh
+    deno run --allow-net --allow-read https://taisukef.github.io/liveserver/liveserver.js
+    ```
+4.  Open the local URL displayed in your terminal (e.g., `http://[::]:7001/`).
+5.  Edit files like `index.html`. The browser will automatically reflect your changes.
+6.  Use GitHub Desktop to create a branch and submit a pull request with your code contributions.
 
-```
-python3 -m pip install pandas
-python3 -m pip install jupyter
-jupyter notebook
-```
-open "data_analyse.ipynb"
+## Data Processing
+
+### Traffic Accident Analysis
+
+The Jupyter Notebook `data_analyse.ipynb` is used to process traffic accident data.
+
+1.  Install the required Python packages:
+    ```sh
+    python3 -m pip install pandas jupyter
+    ```
+2.  Start the Jupyter server:
+    ```sh
+    jupyter notebook
+    ```
+3.  Open `data_analyse.ipynb` from the Jupyter interface in your browser.
+
+### Streetlight Coordinate Conversion
+
+The script `streetlight/jp2wgs.js` converts streetlight coordinates from the Japanese Geodetic System to WGS84. It reads `k.csv` and writes the converted data to `k2.csv`.
+
+## Open Data
+
+-   **School Zone GeoJSON:** [https://code4fukui.github.io/kunitaka/schoolzone.geojson](https://code4fukui.github.io/kunitaka/schoolzone.geojson) (CC BY)
+
+## License
+
+MIT License
